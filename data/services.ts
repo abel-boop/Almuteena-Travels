@@ -1,0 +1,58 @@
+export const services = [
+  {
+    id: 1,
+    name: "Flight Booking",
+    description: "Best deals on domestic and international flights",
+    icon: "✈️",
+    features: ["24/7 Support", "Best Price Guarantee", "Flexible Booking"],
+  },
+  {
+    id: 2,
+    name: "Hotel Reservations",
+    description: "Luxury to budget accommodations worldwide",
+    icon: "🏨",
+    features: ["Verified Hotels", "Instant Confirmation", "Free Cancellation"],
+  },
+  {
+    id: 3,
+    name: "Visa Assistance",
+    description: "Complete visa processing and documentation",
+    icon: "📋",
+    features: ["Document Review", "Application Support", "Fast Processing"],
+  },
+  {
+    id: 4,
+    name: "Travel Insurance",
+    description: "Comprehensive coverage for peace of mind",
+    icon: "🛡️",
+    features: ["Medical Coverage", "Trip Cancellation", "24/7 Emergency"],
+  },
+  {
+    id: 5,
+    name: "Car Rentals",
+    description: "Reliable vehicles for your journey",
+    icon: "🚗",
+    features: ["Wide Selection", "Competitive Rates", "GPS Navigation"],
+  },
+  {
+    id: 6,
+    name: "Tour Guides",
+    description: "Expert local guides for authentic experiences",
+    icon: "🗺️",
+    features: ["Local Expertise", "Multilingual", "Cultural Insights"],
+  },
+  {
+    id: 7,
+    name: "Group Tours",
+    description: "Organized group travel experiences",
+    icon: "👥",
+    features: ["Small Groups", "Expert Guides", "All-Inclusive"],
+  },
+  {
+    id: 8,
+    name: "Custom Itineraries",
+    description: "Personalized travel plans just for you",
+    icon: "📝",
+    features: ["Tailored Plans", "Personal Consultant", "Flexible Dates"],
+  },
+]
