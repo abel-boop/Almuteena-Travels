@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const testimonials = [
   {
@@ -72,12 +73,24 @@ export default function Testimonials() {
           <span className="inline-block px-4 py-1.5 text-sm font-medium bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400 rounded-full mb-4">
             Testimonials
           </span>
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-gray-900 dark:text-white">
+          <motion.h2
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
+            className="text-3xl font-bold tracking-tight sm:text-4xl text-gray-900 dark:text-white"
+          >
             What Our Clients Say
-          </h2>
+          </motion.h2>
         </div>
 
-        <div className="relative max-w-4xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+          className="relative max-w-4xl mx-auto"
+        >
           <div className="relative bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 md:p-10 overflow-hidden">
             <div className="absolute top-0 right-0 text-emerald-50 dark:text-emerald-900/20">
               <Quote className="h-32 w-32 -mt-8 -mr-8" />
@@ -150,7 +163,7 @@ export default function Testimonials() {
               <ChevronRight className="h-5 w-5 text-gray-700 dark:text-gray-300" />
             </button>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

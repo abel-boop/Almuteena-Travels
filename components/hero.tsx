@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Plane, Globe, MapPin, Calendar, Phone } from "lucide-react"
+import { motion } from "framer-motion"
 
 export default function Hero() {
   return (
@@ -14,15 +15,33 @@ export default function Hero() {
       {/* Main content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center py-24 md:py-32">
         <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
+          <motion.h1
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight"
+          >
             Your Gateway to <span className="text-emerald-400">Extraordinary</span> Journeys
-          </h1>
+          </motion.h1>
           
-          <p className="text-xl md:text-2xl text-gray-200 mb-10 max-w-3xl mx-auto">
+          <motion.p
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+            viewport={{ once: true }}
+            className="text-xl md:text-2xl text-gray-200 mb-10 max-w-3xl mx-auto"
+          >
             Experience seamless travel planning with our expert visa services, luxury accommodations, and curated experiences worldwide.
-          </p>
+          </motion.p>
           
-          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
+            viewport={{ once: true }}
+            className="flex flex-col sm:flex-row justify-center gap-4 mb-12"
+          >
             <Button 
               size="lg" 
               className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-6 text-lg font-semibold transition-all duration-300 group"
@@ -38,34 +57,44 @@ export default function Hero() {
               <Phone className="mr-2 h-5 w-5" />
               Contact Us
             </Button>
-          </div>
+          </motion.div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 text-center">
-            <div className="p-4 rounded-xl bg-white/5 backdrop-blur-sm">
-              <div className="w-12 h-12 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                <Plane className="h-6 w-6 text-emerald-400" />
-              </div>
-              <p className="font-medium">Visa Services</p>
-            </div>
-            <div className="p-4 rounded-xl bg-white/5 backdrop-blur-sm">
-              <div className="w-12 h-12 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                <Globe className="h-6 w-6 text-emerald-400" />
-              </div>
-              <p className="font-medium">Worldwide Coverage</p>
-            </div>
-            <div className="p-4 rounded-xl bg-white/5 backdrop-blur-sm">
-              <div className="w-12 h-12 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                <MapPin className="h-6 w-6 text-emerald-400" />
-              </div>
-              <p className="font-medium">Local Experts</p>
-            </div>
-            <div className="p-4 rounded-xl bg-white/5 backdrop-blur-sm">
-              <div className="w-12 h-12 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                <Calendar className="h-6 w-6 text-emerald-400" />
-              </div>
-              <p className="font-medium">24/7 Support</p>
-            </div>
-          </div>
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={{
+              hidden: { opacity: 0 },
+              show: {
+                opacity: 1,
+                transition: { staggerChildren: 0.08, delayChildren: 0.15 },
+              },
+            }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 text-center"
+          >
+            {[
+              { icon: Plane, label: "Visa Services" },
+              { icon: Globe, label: "Worldwide Coverage" },
+              { icon: MapPin, label: "Local Experts" },
+              { icon: Calendar, label: "24/7 Support" },
+            ].map((item, idx) => (
+              <motion.div
+                key={item.label}
+                variants={{
+                  hidden: { opacity: 0, y: 16 },
+                  show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
+                }}
+                whileHover={{ y: -4 }}
+                transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                className="p-4 rounded-xl bg-white/5 backdrop-blur-sm"
+              >
+                <div className="w-12 h-12 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <item.icon className="h-6 w-6 text-emerald-400" />
+                </div>
+                <p className="font-medium">{item.label}</p>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </div>
       
