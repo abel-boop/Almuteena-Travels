@@ -1,6 +1,6 @@
 'use client';
 
-import { Facebook, Twitter, Instagram, Linkedin, MapPin, Mail, Phone, Send } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Linkedin, MapPin, Mail, Phone, Send, MessageCircle, Globe } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Footer() {
@@ -11,9 +11,13 @@ export default function Footer() {
           {/* Company Info */}
           <div>
             <h3 className="text-xl font-bold mb-6">Almuteena Travels</h3>
-            <p className="text-gray-400 mb-6">
+            <p className="text-gray-400 mb-4">
               Creating unforgettable travel experiences with passion and dedication since 2010.
             </p>
+            <div className="inline-flex items-center gap-2 bg-emerald-500/20 rounded-full px-4 py-2 text-emerald-300 text-sm font-medium mb-6">
+              <Globe className="h-4 w-4" />
+              <span>ከኢትዮጵያ ወደ ዓለም ዙሪያ - From Ethiopia to the World</span>
+            </div>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
                 <span className="sr-only">Facebook</span>
@@ -53,43 +57,50 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex">
                 <MapPin className="h-5 w-5 text-emerald-400 mt-1 flex-shrink-0" />
-                <span className="ml-3 text-gray-400">123 Travel Street, Dubai, UAE</span>
+                <div className="ml-3 text-gray-400">
+                  <p>Beza Building, Cameroon St</p>
+                  <p>Bole Medhaniyalem</p>
+                  <p>Near Emirates Head Office</p>
+                  <p>5th Floor, Room 505</p>
+                  <p>Addis Ababa, Ethiopia</p>
+                </div>
               </li>
               <li className="flex">
                 <Mail className="h-5 w-5 text-emerald-400 mt-1 flex-shrink-0" />
-                <a href="mailto:info@almuteena.com" className="ml-3 text-gray-400 hover:text-white transition-colors">
-                  info@almuteena.com
+                <a href="mailto:info@almuteenaet.com" className="ml-3 text-gray-400 hover:text-white transition-colors">
+                  info@almuteenaet.com
                 </a>
               </li>
               <li className="flex">
                 <Phone className="h-5 w-5 text-emerald-400 mt-1 flex-shrink-0" />
-                <a href="tel:+97141234567" className="ml-3 text-gray-400 hover:text-white transition-colors">
-                  +971 4 123 4567
-                </a>
+                <div className="ml-3 text-gray-400">
+                  <p>Landline: <a href="tel:+251118229722" className="hover:text-white transition-colors">+251 11 822 9722</a></p>
+                </div>
               </li>
             </ul>
           </div>
 
-          {/* Newsletter */}
+          {/* WhatsApp & Mobile */}
           <div>
-            <h3 className="text-lg font-semibold mb-6">Newsletter</h3>
-            <p className="text-gray-400 mb-4">Subscribe to get special offers and travel tips</p>
-            <form className="flex">
-              <input
-                type="email"
-                placeholder="Your email"
-                className="px-4 py-3 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 w-full text-gray-900"
-                required
-              />
-              <button
-                type="submit"
-                className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 rounded-r-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 flex items-center"
-              >
-                <span className="sr-only">Subscribe</span>
-                <Send className="h-5 w-5" />
-              </button>
-            </form>
-            <p className="text-xs text-gray-500 mt-2">We respect your privacy. Unsubscribe at any time.</p>
+            <h3 className="text-lg font-semibold mb-6">WhatsApp & Mobile</h3>
+            <ul className="space-y-4">
+              <li className="flex">
+                <MessageCircle className="h-5 w-5 text-green-400 mt-1 flex-shrink-0" />
+                <div className="ml-3 text-gray-400">
+                  <p>WhatsApp: <a href="https://wa.me/251911289195" className="text-green-400 hover:text-green-300 transition-colors">+251 911 289 195</a></p>
+                  <p>Mobile: <a href="tel:+251977437777" className="hover:text-white transition-colors">+251 977 437 777</a></p>
+                </div>
+              </li>
+              <li className="mt-6">
+                <a 
+                  href="https://wa.me/251911289195" 
+                  className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors"
+                >
+                  <MessageCircle className="h-4 w-4" />
+                  Chat on WhatsApp
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
